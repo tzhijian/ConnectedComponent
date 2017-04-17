@@ -6,7 +6,7 @@ public class ConnectedComponent {
 
         int img[][] = new int[6][6];
         int tempArr[][] = new int[6][6];
-        int num = 1;
+        int num = 0;
 
         img[1][1] = 1;
         img[3][1] = 1;
@@ -28,11 +28,11 @@ public class ConnectedComponent {
                     } else if (tempArr[row][col-1] != 0) {
                         tempArr[row][col] = tempArr[row][col-1];
                     } else if (tempArr[row-1][col] == 0) {
-                        tempArr[row][col] = num;
                         num = num + 1;
+                        tempArr[row][col] = num;
                     } else {
-                        tempArr[row][col] = num;
                         num = num + 1;
+                        tempArr[row][col] = num;
                     }
                 } else {
                     tempArr[row][col] = 0;
@@ -46,7 +46,7 @@ public class ConnectedComponent {
             }
             System.out.println();
         }
-        
-        System.out.println(num-1);
+
+        System.out.println(num);
     }
 }
